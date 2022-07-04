@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 const heroTextRevealContent =
   "We will take a deep dive tour to understand what does our company do.";
 
-const gsapsandbox = () => {
+const GsapSandbox = () => {
   const gsapScript = () => {
     let heroTimeline = gsap.timeline();
     heroTimeline
@@ -144,4 +144,4 @@ const gsapsandbox = () => {
   );
 };
 
-export default gsapsandbox;
+export default GsapSandbox;

@@ -13,7 +13,7 @@ import ThemeToggle from "../components/ThemeToggle";
 // css
 import styles from "../styles/Mui.module.scss";
 
-const mui = () => {
+const MUI = () => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -56,4 +56,4 @@ const mui = () => {
   );
 };
 
-export default mui;
+export default MUI;

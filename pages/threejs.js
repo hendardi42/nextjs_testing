@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 import styles from "../styles/ThreeJs.module.scss";
 
-const threejs = () => {
+const ThreeJS = () => {
   useEffect(() => {
     // const scene = new Scene();
     // const cam = new PerspectiveCamera(
@@ -40,4 +40,4 @@ const threejs = () => {
   return <div id="threejs"></div>;
 };
 
-export default threejs;
+export default ThreeJS;
