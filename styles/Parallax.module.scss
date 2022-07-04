@@ -1,0 +1,65 @@
+$parallax-perspective: 500;
+
+@mixin center-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+// 1 + (translateZ * -1) / perspective
+@function parallax-scale-factor($translateZ) {
+  @return (1 + (($translateZ * -1) / $parallax-perspective));
+}
+
+.parallax__website {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: #{$parallax-perspective}px;
+}
+
+.parallax {
+  &__container {
+    min-height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+
+    &--normal {
+      background-color: lightblue;
+      line-height: 100px;
+      font-size: large;
+      z-index: 2;
+      @include center-content();
+    }
+  }
+
+  &__content {
+    background-color: transparent;
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+
+    &--back {
+      transform: translateZ(-600px) scale(parallax-scale-factor(-600));
+    }
+    &--mid {
+      transform: translateZ(-50px) scale(parallax-scale-factor(-50));
+    }
+    &--front {
+      transform: translateZ(300px) scale(parallax-scale-factor(300));
+    }
+
+    &__image {
+      position: absolute;
+
+      &--middle-left {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &--right {
+        right: 0;
+      }
+    }
+  }
+}
