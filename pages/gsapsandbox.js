@@ -66,7 +66,6 @@ const GsapSandbox = () => {
     gsap.utils.toArray(".pinned-container").forEach((section) => {
       let comparisonTl = gsap.timeline({
         scrollTrigger: {
-          markers: true,
           trigger: section,
           scrub: true,
           start: "top top",
